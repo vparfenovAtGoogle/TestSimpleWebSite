@@ -1,0 +1,2 @@
+print ("BOBA")
+print ("MAMA")

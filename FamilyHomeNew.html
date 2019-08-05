@@ -1,0 +1,78 @@
+<html>
+    <head>
+      <title>Bootstrap Example</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      <style>
+        .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+          background-color: lightblue;
+        }
+      </style>
+      <script>
+        function showDetails (row) {
+          //alert (row.cells[0].innerText + ' ' + row.cells[1].innerText)
+          var fullname = row.cells[0].innerText + ' ' + row.cells[1].innerText
+          var picture = row.cells[0].innerText + row.cells[1].innerText + '.jpg'
+          document.getElementById ('fullname').innerText = fullname
+          document.getElementById ('address').innerText = '68 North Mill Street, Hopkinton, MA 01748'
+          document.getElementById ('picture').src = picture
+        }
+      </script>
+    </head>
+    <body>
+        <h2>Parfenov's Family</h2>
+        <table style="width:100%"><tr>
+          <td style="width:70%; vertical-align: top; padding-right: 20px">
+            <table class="table table-hover table-condensed table-bordered table-striped">
+                <thead>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Birthday</th>
+                  <th>Eductaion</th>
+                  <th>Work</th>
+                </thead>
+                <tr onclick="showDetails (this)">
+                  <td>Olga</td>
+                  <td>Parfenova</td>
+                  <td>25-Jan-1962</td>
+                  <td>Kiev State University</td>
+                  <td>PTC</td>
+                </tr>
+                <tr onclick="showDetails (this)">
+                  <td>Maria</td>
+                  <td>Parfenova</td>
+                  <td>30-Oct-1998</td>
+                  <td>Bryant University</td>
+                  <td>Papa Gino's</td>
+                </tr>
+                <tr onclick="showDetails (this)">
+                  <td>Vova</td>
+                  <td>Parfenov</td>
+                  <td>20-Mar-1991</td>
+                  <td>Self-educated</td>
+                  <td>Amazon</td>
+                </tr>
+                <tr onclick="showDetails (this)">
+                  <td>Vladimir</td>
+                  <td>Parfenov</td>
+                  <td>20-Jul-1963</td>
+                  <td>Lenigrad State University</td>
+                  <td>PTC</td>
+                </tr>
+            </table>
+          </td>
+          <td>
+            <div class="table-responsive">
+              <table class="table table-responsive">
+                <tr><td style="width:10%">Full Name</td><td id="fullname"></td></tr>
+                <tr><td>Address</td><td id="address"></td></tr>
+                <tr><td>Photo ID</td><td><img id="picture" src="default.jpg" width="300px"></td></tr>
+              </table>
+            </div>
+          </td>
+        </tr></table>
+    </body>
+</html>
